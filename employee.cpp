@@ -33,7 +33,7 @@ SalariedEmployee::SalariedEmployee(float msalary, float fraction)
 }
 
 //constructor for hourly employee
-HourlyEmployee::HourlyEmployee(float hours, float rate, float ovetime)
+HourlyEmployee::HourlyEmployee(float hours, float rate, float overtime)
 {
   hoursWorked = hours;
   hourlyRate = rate;
@@ -109,6 +109,15 @@ void Employee:: printEmployee ()			// print Employee information
 		getMiddleInitial() <<"." << endl;
   cout << "Dept Code: " << getDeptCode () << endl;  
 }
+void setFraction (const float fraction)
+{
+	fractoftime = fraction;
+}
+
+float getFraction () const
+{
+	return fractoftime;
+}
 
 void SalariedEmployee:: setSalary (const float msalary)		//set monthly salary
 {
@@ -123,7 +132,7 @@ float SalariedEmployee:: getSalary () const		//get monthly salary
 float SalariedEmployee:: calcSalary()  			//calculate actual salary
 {
 	float salary;
-	salary = getSalary() * fraction;
+	salary = getSalary() * getFraction();
 	return salary;
 }
 

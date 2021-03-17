@@ -13,7 +13,6 @@ int main()
   e1 (001, "Jones", "Booker", "T", 22),
   e2 (002, "Hendrix", "Jimi", "NMI ", 14),
   e3 (003, "Morrison", "Jim", "D", 03);
-  e1s (
   e1.printEmployee();
   e2.printEmployee();
 }

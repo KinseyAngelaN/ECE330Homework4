@@ -1,8 +1,7 @@
 /* employee.h	*/
 
-#ifndef EMPLOYEE
-#define EMPLOYEE
-#define SalariedEmployee
+#ifndef EMPLOYEE_H
+#define EMPLOYEE_H
 
 #include <string>
 
@@ -41,7 +40,9 @@ public:
 	SalariedEmployee(float = 0, float = 1);	// constructor
 	void setSalary (const float);		// set salary
 	float getSalary () const;		// get salary
-	float calcSalary (const float, const float);		// calc salary 
+	void setFraction (const float);
+	float getFraction () const;
+	float calcSalary ();		// calc salary 
 	void printSalary ();			// print salary
 private:	
 	float monthlySalary;		//Employee monthly salary
@@ -59,11 +60,12 @@ public:
 	void setOvertime (const float);		// set ovetime
 	float getOvertime () const;		// get overtime
 	float getRate () const;			// get hourly rate
-	float calcHSalary (const int);		// calc salary 
+	float calcHSalary ();		// calc salary 
 	void printSalary ();			// print salary
 private:	
 	float hoursWorked;		//Employee's hours worked
 	float hourlyRate;		//Employee's hourly rate
+	float Overtime;
 };
 
 
