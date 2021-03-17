@@ -24,6 +24,22 @@ Employee::Employee(long id, const string &last, const string &first, const strin
   myDeptCode = dept;
 }
 
+//constructor for salaried employee
+
+SalariedEmployee::SalariedEmployee(float msalary, float fraction)
+{
+  monthlySalary = msalary;
+  fractoftime = fraction;
+}
+
+//constructor for hourly employee
+HourlyEmployee::HourlyEmployee(float hours, float rate, float ovetime)
+{
+  hoursWorked = hours;
+  hourlyRate = rate;
+  Overtime = overtime;
+}
+
 // Accessor function defintions
 
 void Employee::setIdNum (const long  id)
@@ -93,3 +109,72 @@ void Employee:: printEmployee ()			// print Employee information
 		getMiddleInitial() <<"." << endl;
   cout << "Dept Code: " << getDeptCode () << endl;  
 }
+
+void SalariedEmployee:: setSalary (const float msalary)		//set monthly salary
+{
+	monthlySalary = msalary;
+}
+
+float SalariedEmployee:: getSalary () const		//get monthly salary
+{
+	return monthlySalary;
+}
+
+float SalariedEmployee:: calcSalary()  			//calculate actual salary
+{
+	float salary;
+	salary = getSalary() * fraction;
+	return salary;
+}
+
+void SalariedEmployee:: printSalary()			//print salary
+{
+  cout << "Salary:" << calcSalary() << endl;  
+}	
+
+
+void HourlyEmployee:: setHours (const float hours)		//set hours worked
+{
+	hoursWorked = hours;
+}
+
+float HourlyEmployee:: getHours () const		//get hours worked
+{
+	return hoursWorked;
+}
+
+void HourlyEmployee:: setOvertime (const float overtime)		//set overtime hours
+{
+	Overtime = overtime;
+}
+
+float HourlyEmployee:: getOvertime () const		//get overtime hours
+{
+	return Overtime;
+}
+
+
+void HourlyEmployee:: setRate (const float rate)		//set hourly rate
+{
+	hourlyRate = rate;
+}
+
+float HourlyEmployee:: getRate () const		//get hourly
+{
+	return hourlyRate;
+}
+
+
+float HourlyEmployee:: calcHSalary()  			//calculate actual salary
+{
+	float salary;
+	salary = getHours() * getRate() + getOvertime() * 1.5 * getRate();
+	return salary;
+}
+
+void HourlyEmployee:: printSalary()			//print salary
+{
+  cout << "Salary:" << calcHSalary() << endl;  
+}	
+
+

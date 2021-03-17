@@ -2,6 +2,7 @@
 
 #ifndef EMPLOYEE
 #define EMPLOYEE
+#define SalariedEmployee
 
 #include <string>
 
@@ -33,5 +34,38 @@ private:
   string myMiddleInitial;	//Employee middle intial
   int myDeptCode;			//Department code
 };
+
+class SalariedEmployee: public Employee
+{
+public:
+	SalariedEmployee(float = 0, float = 1);	// constructor
+	void setSalary (const float);		// set salary
+	float getSalary () const;		// get salary
+	float calcSalary (const float, const float);		// calc salary 
+	void printSalary ();			// print salary
+private:	
+	float monthlySalary;		//Employee monthly salary
+	float fractoftime;		//Fraction of time employee worked
+};
+
+
+class HourlyEmployee: public Employee
+{
+public:
+	HourlyEmployee(float = 0, float = 0, float = 0);	// constructor
+	void setHours (const float);		// set hours worked
+	float getHours () const;		// get hours worked
+	void setRate (const float);		// set hourly rate
+	void setOvertime (const float);		// set ovetime
+	float getOvertime () const;		// get overtime
+	float getRate () const;			// get hourly rate
+	float calcHSalary (const int);		// calc salary 
+	void printSalary ();			// print salary
+private:	
+	float hoursWorked;		//Employee's hours worked
+	float hourlyRate;		//Employee's hourly rate
+};
+
+
 
 #endif
