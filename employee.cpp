@@ -14,8 +14,7 @@ using namespace std;
 
 // constructor
 
-Employee::Employee(long id, const string &last, const string &first, const string &initial,
-		   int dept)
+Employee::Employee(long id, const string &last, const string &first, const string &initial, int dept)
 {
   myIdNum = id;
   myLastName = last;
@@ -26,14 +25,14 @@ Employee::Employee(long id, const string &last, const string &first, const strin
 
 //constructor for salaried employee
 
-SalariedEmployee::SalariedEmployee(float msalary, float fraction)
+SalariedEmployee::SalariedEmployee(float msalary, float fraction, long id, const string &last, const string &first, const string &initial, int dept) : monthlySalary(msalary), fractoftime(fraction), Employee(id, first, last, initial, dept)
 {
-  monthlySalary = msalary;
-  fractoftime = fraction;
+ // monthlySalary = msalary;
+ // fractoftime = fraction;
 }
 
 //constructor for hourly employee
-HourlyEmployee::HourlyEmployee(float hours, float rate, float overtime)
+HourlyEmployee::HourlyEmployee(float hours, float rate, float overtime, long id, const string &last, const string &first, const string &initial, int dept) : Employee{id, first, last, initial, dept}
 {
   hoursWorked = hours;
   hourlyRate = rate;
@@ -109,12 +108,13 @@ void Employee:: printEmployee ()			// print Employee information
 		getMiddleInitial() <<"." << endl;
   cout << "Dept Code: " << getDeptCode () << endl;  
 }
-void setFraction (const float fraction)
+
+void SalariedEmployee::setFraction (const float fraction)
 {
 	fractoftime = fraction;
 }
 
-float getFraction () const
+float SalariedEmployee::getFraction () const
 {
 	return fractoftime;
 }
@@ -138,7 +138,8 @@ float SalariedEmployee:: calcSalary()  			//calculate actual salary
 
 void SalariedEmployee:: printSalary()			//print salary
 {
-  cout << "Salary:" << calcSalary() << endl;  
+  	Employee:: printEmployee()
+	cout << "Salary:" << calcSalary() << endl;  
 }	
 
 

@@ -37,7 +37,7 @@ private:
 class SalariedEmployee: public Employee
 {
 public:
-	SalariedEmployee(float = 0, float = 1);	// constructor
+	SalariedEmployee(float = 0, float = 1, long = 0, const string & ="" , const string & ="", const string & = "", int =0);	// constructor
 	void setSalary (const float);		// set salary
 	float getSalary () const;		// get salary
 	void setFraction (const float);
@@ -53,7 +53,7 @@ private:
 class HourlyEmployee: public Employee
 {
 public:
-	HourlyEmployee(float = 0, float = 0, float = 0);	// constructor
+	HourlyEmployee(float = 0, float = 0, float = 0, long = 0, const string & ="" , const string & ="", const string & = "", int =0);	// constructor
 	void setHours (const float);		// set hours worked
 	float getHours () const;		// get hours worked
 	void setRate (const float);		// set hourly rate
