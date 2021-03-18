@@ -43,7 +43,7 @@ public:
 	void setFraction (const float);
 	float getFraction () const;
 	float calcSalary ();		// calc salary 
-	void printSalary ();			// print salary
+	void printSSalary ();			// print salary
 private:	
 	float monthlySalary;		//Employee monthly salary
 	float fractoftime;		//Fraction of time employee worked
@@ -61,7 +61,7 @@ public:
 	float getOvertime () const;		// get overtime
 	float getRate () const;			// get hourly rate
 	float calcHSalary ();		// calc salary 
-	void printSalary ();			// print salary
+	void printHSalary ();			// print salary
 private:	
 	float hoursWorked;		//Employee's hours worked
 	float hourlyRate;		//Employee's hourly rate

@@ -136,9 +136,10 @@ float SalariedEmployee:: calcSalary()  			//calculate actual salary
 	return salary;
 }
 
-void SalariedEmployee:: printSalary()			//print salary
+
+void SalariedEmployee:: printSSalary()			//print salary
 {
-  	Employee:: printEmployee()
+  	Employee:: printEmployee();
 	cout << "Salary:" << calcSalary() << endl;  
 }	
 
@@ -182,9 +183,10 @@ float HourlyEmployee:: calcHSalary()  			//calculate actual salary
 	return salary;
 }
 
-void HourlyEmployee:: printSalary()			//print salary
+void HourlyEmployee:: printHSalary()			//print salary
 {
-  cout << "Salary:" << calcHSalary() << endl;  
+	Employee::printEmployee();
+	cout << "Salary:" << calcHSalary() << endl;  
 }	
 
 
